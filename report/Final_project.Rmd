@@ -1,0 +1,69 @@
+---
+title: "EEG Data Analysis Report"
+author: "Ruilong Chen"
+date: "`r Sys.Date()`"
+output: html_document
+params:
+  production: TRUE
+---
+
+```{r, set-chunk-opts, echo = FALSE, eval = params$production}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE
+)
+```
+
+## Introduction
+
+### Data Discription
+The dataset consists of EEG recordings from 10 college students as they watched MOOC video clips of varying difficulty, with corresponding self-reported confusion ratings. The EEG signals were captured using a single-channel wireless MindSet over the frontal lobe, sampled every 0.5 seconds during the middle one-minute segment of each video. Each student watched 20 videos (10 easy, 10 difficult), and confusion labels were provided both as a 7-point scale and a binary classification. Given the potential of EEG signals—particularly Theta wave activity—to indicate cognitive states, this dataset presents an opportunity for feature selection, classification modeling, and causal inference. 
+
+### Objective
+My vision for an R Markdown report includes an exploratory data analysis (EDA) of EEG signals, an overview of the variables, and an in-depth analysis of some variables. The report will generate tables and visualizations.
+
+
+```{r load_data}
+library(readr)
+library(dplyr)
+library(ggplot2)
+here::i_am("report/Final_project.Rmd")
+
+# Load dataset (Replace with actual file path or URL)
+data <- read_csv(here::here("data/EEG_data.csv"))
+```
+
+## Summary Statistics
+
+
+```{r summary-table}
+data_summary <- data %>% 
+  select(Attention, Mediation, Delta, Theta, Alpha1, Alpha2, Beta1, Beta2, Gamma1, Gamma2) %>% 
+  summary()
+
+gtsummary::tbl_summary(data, by = predefinedlabel) %>%
+  gtsummary::add_p() %>%
+  gtsummary::bold_labels()
+```
+This image presents a comparative analysis of various characteristics, including SubjectID, VideoID, Attention, Mediation, and brainwave frequency bands (e.g., Delta, Theta, Alpha, Beta, Gamma). The values are presented as medians with interquartile ranges, and p-values are provided to indicate statistical significance. Key findings include significant differences in VideoID, Beta1, Beta2, and Gamma2, while other metrics like Attention and Alpha2 show no significant differences.
+
+```{r Delta_summary}
+# Plot a histogram of the Delta band
+library(ggplot2)
+ggplot(data, aes(x = Delta)) + 
+  geom_histogram(binwidth = 1000, fill = "blue", color = "black") +
+  labs(title = "Distribution of Delta Band", x = "Delta Value", y = "Frequency")
+
+```
+```{r Theta_summary}
+# Plot a histogram of the Delta band
+library(ggplot2)
+ggplot(data, aes(x = Theta)) + 
+  geom_histogram(binwidth = 1000, fill = "blue", color = "black") +
+  labs(title = "Distribution of Theta Band", x = "Theta Value", y = "Frequency")
+
+```
+
+
+
+Both graphs illustrate the distribution characteristics of brainwave frequency bands. The Delta Band and Theta Band show higher frequencies at lower values, but the Delta Band has a broader distribution with a longer tail.
