@@ -1,0 +1,61 @@
+Var1,Var2,Freq
+,  Attention,Min.   :  0.00  
+,  Attention,1st Qu.: 27.00  
+,  Attention,Median : 43.00  
+,  Attention,Mean   : 41.31  
+,  Attention,3rd Qu.: 57.00  
+,  Attention,Max.   :100.00  
+,  Mediation,Min.   :  0.00  
+,  Mediation,1st Qu.: 37.00  
+,  Mediation,Median : 51.00  
+,  Mediation,Mean   : 47.18  
+,  Mediation,3rd Qu.: 63.00  
+,  Mediation,Max.   :100.00  
+,    Delta,Min.   :    448  
+,    Delta,1st Qu.:  98064  
+,    Delta,Median : 395487  
+,    Delta,Mean   : 605785  
+,    Delta,3rd Qu.: 916623  
+,    Delta,Max.   :3964663  
+,    Theta,Min.   :     17  
+,    Theta,1st Qu.:  26918  
+,    Theta,Median :  81331  
+,    Theta,Mean   : 168053  
+,    Theta,3rd Qu.: 205276  
+,    Theta,Max.   :3007802  
+,    Alpha1,Min.   :      2  
+,    Alpha1,1st Qu.:   6838  
+,    Alpha1,Median :  17500  
+,    Alpha1,Mean   :  41384  
+,    Alpha1,3rd Qu.:  44780  
+,    Alpha1,Max.   :1369955  
+,    Alpha2,Min.   :      2  
+,    Alpha2,1st Qu.:   6852  
+,    Alpha2,Median :  14959  
+,    Alpha2,Mean   :  33183  
+,    Alpha2,3rd Qu.:  34551  
+,    Alpha2,Max.   :1016913  
+,    Beta1,Min.   :      3  
+,    Beta1,1st Qu.:   6140  
+,    Beta1,Median :  12818  
+,    Beta1,Mean   :  24318  
+,    Beta1,3rd Qu.:  27406  
+,    Beta1,Max.   :1067778  
+,    Beta2,Min.   :      2  
+,    Beta2,1st Qu.:   7358  
+,    Beta2,Median :  15810  
+,    Beta2,Mean   :  38144  
+,    Beta2,3rd Qu.:  35494  
+,    Beta2,Max.   :1645369  
+,    Gamma1,Min.   :      1  
+,    Gamma1,1st Qu.:   4058  
+,    Gamma1,Median :   9763  
+,    Gamma1,Mean   :  29593  
+,    Gamma1,3rd Qu.:  24888  
+,    Gamma1,Max.   :1972506  
+,    Gamma2,Min.   :      2  
+,    Gamma2,1st Qu.:   2168  
+,    Gamma2,Median :   5116  
+,    Gamma2,Mean   :  14416  
+,    Gamma2,3rd Qu.:  12670  
+,    Gamma2,Max.   :1348117  

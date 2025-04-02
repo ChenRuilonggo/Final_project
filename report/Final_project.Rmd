@@ -37,30 +37,41 @@ data <- read_csv(here::here("data/EEG_data.csv"))
 
 
 ```{r summary-table}
-data_summary <- data %>% 
-  select(Attention, Mediation, Delta, Theta, Alpha1, Alpha2, Beta1, Beta2, Gamma1, Gamma2) %>% 
-  summary()
+library(knitr)
 
-gtsummary::tbl_summary(data, by = predefinedlabel) %>%
-  gtsummary::add_p() %>%
-  gtsummary::bold_labels()
+# Path to the saved image or HTML content
+summary_table_html_path <- here::here("output", "grouped_summary.html")
+
+# Use knitr::include_graphics to include the HTML or image file in the report
+include_graphics(summary_table_html_path)
+
 ```
+
+
 This image presents a comparative analysis of various characteristics, including SubjectID, VideoID, Attention, Mediation, and brainwave frequency bands (e.g., Delta, Theta, Alpha, Beta, Gamma). The values are presented as medians with interquartile ranges, and p-values are provided to indicate statistical significance. Key findings include significant differences in VideoID, Beta1, Beta2, and Gamma2, while other metrics like Attention and Alpha2 show no significant differences.
 
 ```{r Delta_summary}
-# Plot a histogram of the Delta band
-library(ggplot2)
-ggplot(data, aes(x = Delta)) + 
-  geom_histogram(binwidth = 1000, fill = "blue", color = "black") +
-  labs(title = "Distribution of Delta Band", x = "Delta Value", y = "Frequency")
+library(png)
+library(grid)
+library(here)
+
+# Path to the saved figures
+delta_path <- here::here("output", "delta_distribution.png")
+
+
+# Load and display the Delta distribution plot
+delta_img <- readPNG(delta_path)
+grid.raster(delta_img)
 
 ```
 ```{r Theta_summary}
-# Plot a histogram of the Delta band
-library(ggplot2)
-ggplot(data, aes(x = Theta)) + 
-  geom_histogram(binwidth = 1000, fill = "blue", color = "black") +
-  labs(title = "Distribution of Theta Band", x = "Theta Value", y = "Frequency")
+# Load and display the Theta distribution plot
+theta_path <- here::here("output", "theta_distribution.png")
+
+
+theta_img <- readPNG(theta_path)
+grid.raster(theta_img)
+
 
 ```
 
