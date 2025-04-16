@@ -33,3 +33,12 @@ Make sure the following packages are installed in your R environment:
 - `grid`
 
 
+## Reproducing the Environment
+
+This project uses the `renv` package to manage dependencies.
+
+To install the required packages, run:
+
+```bash
+make install
+
