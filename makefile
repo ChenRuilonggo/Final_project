@@ -18,3 +18,6 @@ summary: output/grouped_summary.html
 
 output/grouped_summary.html: data/EEG_data.csv
 	Rscript script/table_gen.R
+	
+install:
+	Rscript -e 'renv::restore()'
