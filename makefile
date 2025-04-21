@@ -11,8 +11,6 @@ output/delta_distribution.png: data/EEG_data.csv
 
 theta_distribution: output/theta_distribution.png
 
-output/delta_distribution.png: data/EEG_data.csv
-	Rscript script/figure_gen.R
 	
 summary: output/grouped_summary.html
 
