@@ -27,7 +27,7 @@ My vision for an R Markdown report includes an exploratory data analysis (EDA) o
 library(readr)
 library(dplyr)
 library(ggplot2)
-here::i_am("report/Final_project.Rmd")
+here::i_am("Final_project.Rmd")
 
 # Load dataset (Replace with actual file path or URL)
 data <- read_csv(here::here("data/EEG_data.csv"))

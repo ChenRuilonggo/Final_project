@@ -1,5 +1,9 @@
 # figure_gen.R
-
+library(cards)
+library(car)
+library(broom)
+library(broom.helpers)
+library(parameters)
 library(ggplot2)
 library(readr)
 library(here)
