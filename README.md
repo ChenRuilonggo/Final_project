@@ -39,7 +39,6 @@ This project uses the `renv` package to manage dependencies.
 
 To install the required packages, run:
 
-```bash
 make install
 
 ## Docker Image
