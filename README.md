@@ -42,3 +42,21 @@ To install the required packages, run:
 ```bash
 make install
 
+## Docker Image
+
+### Docker Image Link
+https://hub.docker.com/repository/docker/raylonc02/final-report-image/general
+
+### Building Image
+run "make image-build"
+
+### Running the automated version of the image
+If you are mac user with m chips:
+run "make run-report-mac-m"
+
+If you are mac user with amd chips:
+run "make run-report-mac-amd"
+
+If you are win user with amd chips:
+run "make run-report-win"
+

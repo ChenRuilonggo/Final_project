@@ -1,14 +1,32 @@
 # Base image  pre-installed
 FROM rocker/r-ver:4.3.0 AS base
 
-# Install system dependencies often required by R packages
+# Install system dependencies for common R packages
 RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    make \
     pandoc \
     libcurl4-openssl-dev \
     libssl-dev \
     libxml2-dev \
     libgit2-dev \
-    make \
+    libnlopt-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libtiff5-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libfontconfig1-dev \
+    libcairo2-dev \
+    libgl1-mesa-dev \
+    libglu1-mesa-dev \
+    libx11-dev \
+    libgdal-dev \
+    libgeos-dev \
+    libproj-dev \
+    libv8-dev \
     && apt-get clean
 
 # Create a project root directory and set it as the working directory

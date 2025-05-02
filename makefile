@@ -26,12 +26,14 @@ clean:
 
 
 image-build:
-	docker build -t raylonc02/final-report-image
+	docker build -t raylonc02/final-report-image .
 
-run-report-mac:
+run-report-mac-amd:
 	docker run -v "$$(pwd)/report:/home/rstudio/project/report" raylonc02/final-report-image
 	
-
+run-report-mac-m:
+	docker run --platform linux/amd64 -v "$$(pwd)/report:/home/rstudio/project/report" raylonc02/final-report-image
+	
 run-report-win:
 	docker run -v "/$$(pwd)/report:/home/rstudio/project/report" raylonc02/final-report-image
 
